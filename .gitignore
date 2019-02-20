@@ -37,3 +37,5 @@
 
 # Etc
 .DS_Store
+/.idea
+CMakeLists.txt
