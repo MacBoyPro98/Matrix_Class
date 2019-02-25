@@ -25,6 +25,12 @@ Fills the Matrix with 0s.
 void Zeroes();
 ```
 
+### Fill Null
+Fills the Matrix with NULL.
+```cpp
+void fillNull();
+```
+
 ### Set
 Sets the value at the index with the value given.
 ```cpp
@@ -37,3 +43,23 @@ Returns the value at the index given.
 T Get(int i, int j);
 ```
 
+## Getters
+These functions return the private value from the Matrix Class.
+
+### getSize
+Returns the size of the Matrix. Size = rows * cols;
+```cpp
+T getSize();
+```
+
+### getRows
+Returns the number of rows in the Matrix.
+```cpp
+T getRows();
+```
+
+### getCols
+Returns the number of columns in the Matrix.
+```cpp
+T getCols();
+```
