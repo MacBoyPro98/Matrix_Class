@@ -28,6 +28,7 @@ public:
 	/* METHODS */
 	void Print();
 	void Zeroes();
+	void fillNull();
 	void Set(int i, int j, T val);
 	T Get(int i, int j);
 };

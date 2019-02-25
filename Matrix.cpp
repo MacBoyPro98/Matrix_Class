@@ -48,6 +48,13 @@ void Matrix<T>::Zeroes() {
 }
 
 template <class T>
+void Matrix<T>::fillNull() {
+	for(int i = 0; i < this->rows; ++i)
+		for(int j = 0; j < this->cols; ++j)
+			this->mat[i][j] = NULL;
+}
+
+template <class T>
 void Matrix<T>::Set(int i, int j, T val) {
 	this->mat[i][j] = val;
 }
