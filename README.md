@@ -5,6 +5,7 @@ Template Matrix Class (C++). This will allow people to create 2D Matrices in C++
 Creating a new Matrix (C++)
 ```cpp
 int main() {
+    //creates new 5x5 matrix
     Matrix <int> matrix (5, 5);
     
     return 0;
