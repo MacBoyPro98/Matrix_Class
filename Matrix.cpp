@@ -65,6 +65,20 @@ T Matrix<T>::Get(int i, int j) {
 }
 
 template <class T>
+Matrix <T> dot(Matrix<T> &x, Matrix<T> &y) {
+	if (x.getRows() == y.getCols()) {
+		Matrix<int> m(x.getRows(), y.getCols());
+		m.Zeroes();
+
+		for (int i = 0; i < x.getRows(); i++)
+			for (int j = 0; j < y.getCols(); j++)
+				for (int k = 0; k < x.getCols(); k++)
+					m.Set(i, j, m.Get(i, j) + x.Get(i, k) * y.Get(k, j));
+		return m;
+	}
+}
+
+template <class T>
 int Matrix<T>::getSize() {
 	return this->rows * this->cols;
 }
