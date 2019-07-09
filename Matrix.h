@@ -21,15 +21,15 @@ public:
 	~Matrix();
 
 	/* GETTERS */
-	int getSize();
 	int getRows();
 	int getCols();
 
 	/* METHODS */
 	void Print();
-	void Zeroes();
+	void fillZeros();
 	void fillNull();
 	void Set(int i, int j, T val);
+	int Size();
 	T Get(int i, int j);
 };
 

@@ -1,5 +1,5 @@
 # Matrix Class
-Template Matrix Class (C++). This will allow people to create 2D Matrices in C++. 
+Template Matrix Class (C++) to allow easy creatation of 2D Matrices in C++. 
 
 ## Usage
 Creating a new Matrix (C++)
@@ -41,6 +41,12 @@ void Set(int i, int j, T val);
 Returns the value at the index given.
 ```cpp
 T Get(int i, int j);
+```
+
+### dot
+Returns a new matrix that is the dot product of the two input matrices
+```cpp
+Matrix <T> dot(Matrix<T> x, Matrix<T> y);
 ```
 
 ## Getters

@@ -41,7 +41,7 @@ void Matrix<T>::Print(){
 }
 
 template <class T>
-void Matrix<T>::Zeroes() {
+void Matrix<T>::fillZeros() {
 	for(int i = 0; i < this->rows; ++i)
 		for(int j = 0; j < this->cols; ++j)
 			this->mat[i][j] = 0;
@@ -68,7 +68,7 @@ template <class T>
 Matrix <T> dot(Matrix<T> &x, Matrix<T> &y) {
 	if (x.getRows() == y.getCols()) {
 		Matrix<int> m(x.getRows(), y.getCols());
-		m.Zeroes();
+		m.fillZeros();
 
 		for (int i = 0; i < x.getRows(); i++)
 			for (int j = 0; j < y.getCols(); j++)
@@ -79,7 +79,7 @@ Matrix <T> dot(Matrix<T> &x, Matrix<T> &y) {
 }
 
 template <class T>
-int Matrix<T>::getSize() {
+int Matrix<T>::Size() {
 	return this->rows * this->cols;
 }
 
