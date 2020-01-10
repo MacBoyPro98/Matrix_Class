@@ -55,6 +55,16 @@ void Matrix<T>::fillNull() {
 }
 
 template <class T>
+void Matrix<T>::fillRand() {
+    //Add values to the Matrix
+    for (int i = 0; i < this->rows; ++i) {
+        for (int j = 0; j < this->cols; ++j) {
+            this->mat[i][j] = rand() % 100;
+        }
+    }
+}
+
+template <class T>
 void Matrix<T>::Set(int i, int j, T val) {
 	this->mat[i][j] = val;
 }
@@ -74,8 +84,34 @@ Matrix <T> dot(Matrix<T> &x, Matrix<T> &y) {
 			for (int j = 0; j < y.getCols(); j++)
 				for (int k = 0; k < x.getCols(); k++)
 					m.Set(i, j, m.Get(i, j) + x.Get(i, k) * y.Get(k, j));
-		return m;
+
+//        m.Print();
+        return m;
+	} else {
+	    std::cout << "\n[ERROR] - Dimensions of the matrices are not compatible\n";
+        std::cout << "\tX Rows: " << x.getRows() << " Y Rows: " << y.getRows() << "\n";
+        std::cout << "\tX Cols: " << x.getCols() << " Y Cols: " << y.getCols() << "\n";
 	}
+}
+
+template <class T>
+Matrix <T> sum(Matrix<T> &x, Matrix<T> &y) {
+    if (x.getRows() == y.getRows() && x.getCols() == y.getCols()) {
+        Matrix<int> m(x.getRows(), y.getCols());
+        m.fillZeros();
+
+        for (int i = 0; i < x.getRows(); i++)
+            for (int j = 0; j < y.getCols(); j++)
+                for (int k = 0; k < x.getCols(); k++)
+                    m.Set(i, j, x.Get(i,j) + y.Get(i, j));
+
+//        m.Print();
+        return m;
+    } else {
+        std::cout << "\n[ERROR] - Dimensions of the matrices are not compatible\n";
+        std::cout << "\tX Rows: " << x.getRows() << " Y Rows: " << y.getRows() << "\n";
+        std::cout << "\tX Cols: " << x.getCols() << " Y Cols: " << y.getCols() << "\n";
+    }
 }
 
 template <class T>
@@ -91,4 +127,15 @@ int Matrix<T>::getRows() {
 template <class T>
 int Matrix<T>::getCols() {
 	return this->cols;
+}
+
+template <class T>
+std::ostream& operator<<(std::ostream& os, const Matrix<T>& m) {
+    for (int i = 0; i < m.rows; ++i) {
+        for (int j = 0; j < m.cols; ++j) {
+            os << std::setw(4) << m.mat[i][j] << std::setw(3) << " ";
+        }
+        std::cout << "\n";
+    }
+    return os;
 }
