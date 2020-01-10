@@ -50,6 +50,12 @@ Returns a new matrix that is the dot product of the two input matrices
 Matrix <T> dot(Matrix<T> x, Matrix<T> y);
 ```
 
+### Sum
+Returns a new matrix that is the sum of the two input matrices
+```cpp
+Matrix <T> sum(Matrix<T> x, Matrix<T> y);
+```
+
 ## Getters
 These functions return the private value from the Matrix Class.
 
