@@ -32,6 +32,12 @@ Fills the Matrix with NULL.
 void fillNull();
 ```
 
+### Fill Random
+Fills the Matrix with random values.
+```cpp
+void fillRandom();
+```
+
 ### Set
 Sets the value at the index with the value given.
 ```cpp
